@@ -1,0 +1,91 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="1600"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border Background="#F5D3B3">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" CornerRadius="15" Width="700" Height="800">
+                <Border.Background>
+                    <ImageBrush ImageSource="/poster.png"/>
+                </Border.Background>
+            </Border>
+
+            <StackPanel Grid.Column="1">
+                <Label Content="WELCOME" FontSize="60" Foreground="#132D3A" HorizontalContentAlignment="Center" Margin="0 150 0 0" FontWeight="Bold"/>
+                <StackPanel HorizontalAlignment="Center">
+                    <Label Content="Email" HorizontalAlignment="Left" Margin="0,60,0,15" Width="496" FontSize="36" Height="52"/>
+
+                    <Border Width="500" Height="60" CornerRadius="10" Background="White" Padding="2">
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black"
+                              BlurRadius="10"
+                              ShadowDepth="5"
+                              Opacity="0.5"/>
+                        </Border.Effect>
+
+                        <TextBox x:Name="emailBox"
+                             TextWrapping="Wrap"
+                             VerticalAlignment="Top"
+                             Width="496" Height="52"
+                             FontSize="36"
+                             BorderThickness="0">
+                            <TextBox.Background>
+                                <SolidColorBrush Opacity="0.945"/>
+                            </TextBox.Background>
+                        </TextBox>
+                    </Border>
+
+                    <Label Content="Password" HorizontalAlignment="Center" Margin="0,15,0,15" Width="498" FontSize="36" Height="52"/>
+                    <Border Width="500" Height="60" CornerRadius="10" Background="White" Padding="2">
+                        <Border.Effect>
+                            <DropShadowEffect Color="Black"
+                              BlurRadius="10"
+                              ShadowDepth="5"
+                              Opacity="0.5"/>
+                        </Border.Effect>
+
+                        <PasswordBox
+                             VerticalAlignment="Top"
+                             Width="496" Height="52"
+                             FontSize="36"
+                             BorderThickness="0">
+                            <PasswordBox.Background>
+                                <SolidColorBrush Opacity="0.945"/>
+                            </PasswordBox.Background>
+                        </PasswordBox>
+                    </Border>
+
+                    <Border CornerRadius="15">
+                        <Button Content="Login" Foreground="White"
+                                HorizontalAlignment="Center" 
+                                Margin="0,40,0,0" VerticalAlignment="Center" 
+                                Height="60" Width="500" FontSize="35"
+                                BorderThickness="0"
+                                Background="#132D3A" Click="Button_Click"/>
+                    </Border>
+
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" Margin="0 15 0 0">
+                        <Run Text="Don't you have an account? " />
+                        <Hyperlink Foreground="Blue">
+                            <Run Text="Register" Foreground="#FF5353B1" />
+                        </Hyperlink>
+                    </TextBlock>
+
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+	  <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+	  <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Images\1.jpg" />
+    <None Remove="Assets\Images\10.jpg" />
+    <None Remove="Assets\Images\11.jpg" />
+    <None Remove="Assets\Images\12.jpg" />
+    <None Remove="Assets\Images\13.jpg" />
+    <None Remove="Assets\Images\14.jpg" />
+    <None Remove="Assets\Images\15.jpg" />
+    <None Remove="Assets\Images\16.jpg" />
+    <None Remove="Assets\Images\17.jpg" />
+    <None Remove="Assets\Images\18.jpg" />
+    <None Remove="Assets\Images\19.jpg" />
+    <None Remove="Assets\Images\2.jpg" />
+    <None Remove="Assets\Images\20.jpg" />
+    <None Remove="Assets\Images\3.jpg" />
+    <None Remove="Assets\Images\4.jpg" />
+    <None Remove="Assets\Images\5.jpg" />
+    <None Remove="Assets\Images\6.jpg" />
+    <None Remove="Assets\Images\7.jpg" />
+    <None Remove="Assets\Images\8.jpg" />
+    <None Remove="Assets\Images\9.jpg" />
+    <None Remove="Assets\Images\dish.jpg" />
+    <None Remove="Assets\Images\logo Saku Ramen.png" />
+    <None Remove="Assets\Images\nami-1920x1080.png" />
+    <None Remove="Assets\Images\poster.png" />
+    <None Remove="Assets\Images\ramen.jpg" />
+    <None Remove="Assets\Images\sushi.png" />
+    <None Remove="Assets\Images\up-fb-set-quy-toc-578x800.png" />
+    <None Remove="nami-1920x1080.png" />
+    <None Remove="poster.png" />
+    <None Remove="Views\poster.png" />
+    <None Remove="Views\sushi.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\1.jpg" />
+    <Resource Include="Assets\Images\10.jpg" />
+    <Resource Include="Assets\Images\11.jpg" />
+    <Resource Include="Assets\Images\12.jpg" />
+    <Resource Include="Assets\Images\13.jpg" />
+    <Resource Include="Assets\Images\14.jpg" />
+    <Resource Include="Assets\Images\15.jpg" />
+    <Resource Include="Assets\Images\16.jpg" />
+    <Resource Include="Assets\Images\17.jpg" />
+    <Resource Include="Assets\Images\18.jpg" />
+    <Resource Include="Assets\Images\19.jpg" />
+    <Resource Include="Assets\Images\2.jpg" />
+    <Resource Include="Assets\Images\20.jpg" />
+    <Resource Include="Assets\Images\3.jpg" />
+    <Resource Include="Assets\Images\4.jpg" />
+    <Resource Include="Assets\Images\5.jpg" />
+    <Resource Include="Assets\Images\6.jpg" />
+    <Resource Include="Assets\Images\7.jpg" />
+    <Resource Include="Assets\Images\8.jpg" />
+    <Resource Include="Assets\Images\9.jpg" />
+    <Resource Include="Assets\Images\dish.jpg" />
+    <Resource Include="Assets\Images\logo Saku Ramen.png" />
+    <Resource Include="Assets\Images\poster.png" />
+    <Resource Include="Assets\Images\ramen.jpg" />
+    <Resource Include="Assets\Images\sushi.png" />
+    <Resource Include="Assets\Images\up-fb-set-quy-toc-578x800.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.Notifications" Version="7.1.3" />
+    <PackageReference Include="PDFsharp" Version="6.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\nami-1920x1080.png" />
+    <Resource Include="nami-1920x1080.png" />
+    <Resource Include="poster.png" />
+    <Resource Include="Views\poster.png" />
+    <Resource Include="Views\sushi.png" />
+  </ItemGroup>
+
+</Project>

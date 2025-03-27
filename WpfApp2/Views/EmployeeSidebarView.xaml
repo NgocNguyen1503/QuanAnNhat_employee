@@ -1,0 +1,69 @@
+﻿<Window x:Class="QuanAnNhat_admin.Views.EmployeeOdersView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanAnNhat_admin.Views"
+        xmlns:viewmodels="clr-namespace:QuanAnNhat_admin.ViewModels"
+        mc:Ignorable="d"
+        Title="EmployeeOdersView" Height="900" Width="1600"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <viewmodels:EmployeeSidebarViewModel x:Key="SidebarVM"/>
+
+        <!-- DataTemplate để ánh xạ ViewModel thành View -->
+        <DataTemplate DataType="{x:Type viewmodels:EmployeeOrderViewModel}">
+            <local:EmployeeOrderView/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Border Background="#F5D3B3">
+        <Grid DataContext="{StaticResource SidebarVM}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Background="#3A3935">
+                <StackPanel>
+                    <Border Grid.Column="0" CornerRadius="100" Width="220" Height="210">
+                        <Border.Background>
+                            <ImageBrush ImageSource="/Assets/Images/logo Saku Ramen.png"/>
+                        </Border.Background>
+                    </Border>
+                    <Label Content="Saku Ramen" Margin="0 10 0 0" Foreground="White" HorizontalAlignment="Center" FontSize="40" FontFamily="Kaushan Script"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <RadioButton x:Name="OrderBtn" Content="Orders" Command="{Binding ExcuteUpdateViewCommand}" CommandParameter="{Binding Content, ElementName=OrderBtn}" Cursor="Hand" Style="{StaticResource SidebarBtnTheme}"/>
+                    <RadioButton x:Name="TableBtn" Content="Tables" Command="{Binding ExcuteUpdateViewCommand}" CommandParameter="{Binding Content, ElementName=TableBtn}" Cursor="Hand" Style="{StaticResource SidebarBtnTheme}"/>
+                    <RadioButton x:Name="MenuBtn" Content="Menu" Command="{Binding ExcuteUpdateViewCommand}" CommandParameter="{Binding Content, ElementName=MenuBtn}" Cursor="Hand" Style="{StaticResource SidebarBtnTheme}"/>
+                </StackPanel>
+
+                <Grid Height="80" Margin="0 180 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" Margin="20 0 0 0" CornerRadius="100" Width="80" Height="80">
+                        <Border.Background>
+                            <ImageBrush ImageSource="/poster.png"/>
+                        </Border.Background>
+                    </Border>
+
+                    <StackPanel Grid.Column="1">
+                        <Label Content="Employee" Foreground="White" FontSize="26" FontFamily="Montserrat Alternates" FontWeight="Bold"/>
+                        <Label Content="Fey D" Background="#3A3935" Foreground="White" FontSize="20" FontFamily="Montserrat Alternates" HorizontalAlignment="Left"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+            <ContentControl Grid.Column="1" Content="{Binding SelectedViewModel}"/>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,38 @@
+﻿<Application x:Class="WpfApp2.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WpfApp2"
+             xmlns:converter="clr-namespace:QuanAnNhat_admin.Converter"
+             xmlns:views="clr-namespace:QuanAnNhat_admin.Views"
+             xmlns:viewmodels="clr-namespace:QuanAnNhat_admin.ViewModels"
+             StartupUri="Views/EmployeeSidebarView.xaml">
+    <Application.Resources>
+        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Theme/SidebarBtnTheme.xaml"/>
+                <ResourceDictionary Source="/Theme/OrderStatusBtnTheme.xaml"/>
+                <ResourceDictionary Source="/Theme/SearchTextBoxTheme.xaml"/>
+                <ResourceDictionary Source="/Theme/CategoryTheme.xaml"/>
+                <ResourceDictionary Source="/Theme/ComboBoxToggleButtonTemplate.xaml"/>
+                <ResourceDictionary Source="/Theme/ScrollbarTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewmodels:EmployeeOrderViewModel}">
+                <views:EmployeeOdersView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:EmployeeTableViewModel}">
+                <views:EmployeeTableView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:EmployeeMenuViewModel}">
+                <views:EmployeeMenuView/>
+            </DataTemplate>
+
+            <converter:TableStatusConverter x:Key="TableStatusConverter"/>
+            <converter:ThumbnailConverter x:Key="ThumbnailConverter"/>
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>
