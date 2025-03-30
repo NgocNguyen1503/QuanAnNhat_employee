@@ -130,22 +130,28 @@ namespace QuanAnNhat_admin.ViewModels
         public void SearchDishes(string? searchText)
         {
             Dishes.Clear();
-            var _dishes = DataProvider.Ins.Context.Dishes.Where(dish => dish.Name.Contains(searchText)).ToList();
-            foreach (var item in _dishes)
+            using (var context = new QuanannhatContext())
             {
-                Dishes.Add(item);
+                var _dishes = context.Dishes.Where(dish => dish.Name.Contains(searchText)).ToList();
+                foreach (var item in _dishes)
+                {
+                    Dishes.Add(item);
+                }
             }
         }
 
         [RelayCommand]
-        public void GetDishesByMenu (string? dishlistName)
+        public void GetDishesByMenu(string? dishlistName)
         {
             Dishes.Clear();
-            var dishlist = DataProvider.Ins.Context.Dishlists.Where(dishlist => dishlist.Name == dishlistName).First();
-            var _dishes = DataProvider.Ins.Context.Dishes.Where(dish => dish.DishlistId == dishlist.Id).ToList();
-            foreach (Dish dish in _dishes)
+            using (var context = new QuanannhatContext())
             {
-                Dishes.Add(dish);
+                var dishlist = context.Dishlists.Where(dishlist => dishlist.Name == dishlistName).First();
+                var _dishes = context.Dishes.Where(dish => dish.DishlistId == dishlist.Id).ToList();
+                foreach (Dish dish in _dishes)
+                {
+                    Dishes.Add(dish);
+                }
             }
         }
 
